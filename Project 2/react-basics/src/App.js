@@ -1,5 +1,6 @@
 import "./App.css";
 import Fetch from "./Components/Fetch";
+import NavBar from "./Components/NavBar";
 function App() {
   return (
     <div>
@@ -12,8 +13,9 @@ export default function MyApp() {
   return (
     <div>
       <h1>Welcome to my app</h1>
+      <NavBar />
       <App />
-      <Fetch />
+      <Fetch userName="Mayur" />
     </div>
   );
 }

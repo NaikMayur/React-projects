@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-function Fetch() {
+function Fetch(props) {
   const url = "https://api.github.com/users/NaikMayur";
   const [data, setData] = useState("");
   const [error, setError] = useState(null);
@@ -32,6 +32,7 @@ function Fetch() {
     <div>
       {error && <p>Error: {error}</p>}
       <ul>
+        <li>{props.userName}</li>
         <li>{data.login}</li>
       </ul>
     </div>
