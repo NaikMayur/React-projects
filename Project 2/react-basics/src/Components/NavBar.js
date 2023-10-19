@@ -1,13 +1,23 @@
 import React from "react";
 
-function NavBar() {
-  const btn = document.querySelector("#btn1");
-  // btn.addEventListener("click", () => {});
+function NavBar({ fetchData }) {
+  const handleClick = (event) => {
+    event.preventDefault(); // Prevent the default behavior
+    fetchData(); // Call the fetchData function
+  };
+  const color = (sessionStorage.bestColor = "green");
+  console.log(sessionStorage.bestColor);
   return (
     <>
       <ul className="nav nav-pills">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">
+          <a
+            className="nav-link active"
+            aria-current="page"
+            href="/"
+            id="btn1"
+            onClick={handleClick}
+          >
             Active
           </a>
         </li>
