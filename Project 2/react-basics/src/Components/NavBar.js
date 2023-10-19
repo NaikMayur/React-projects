@@ -5,8 +5,6 @@ function NavBar({ fetchData }) {
     event.preventDefault(); // Prevent the default behavior
     fetchData(); // Call the fetchData function
   };
-  const color = (sessionStorage.bestColor = "green");
-  console.log(sessionStorage.bestColor);
   return (
     <>
       <ul className="nav nav-pills">

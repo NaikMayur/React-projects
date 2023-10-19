@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Fetch from "./Components/Fetch";
 import NavBar from "./Components/NavBar";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
 export default function MyApp() {
   const url = "https://api.github.com/users/NaikMayur";
   const [data, setData] = useState(null); // Initialize as null
@@ -53,16 +53,8 @@ export default function MyApp() {
       {error && <p>Error: {error}</p>}
 
       <div>
-        <Link to="/fetch">Fetch New Data</Link>
         <Fetch />
       </div>
-      <Router>
-        <div>
-          <Switch>
-            <Route path="/fetch" component={Fetch} />
-          </Switch>
-        </div>
-      </Router>
     </div>
   );
 }
