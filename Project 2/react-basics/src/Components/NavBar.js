@@ -7,8 +7,8 @@ function NavBar({ fetchData }) {
   };
   return (
     <>
-      <div className="mt-2 mr-5">
-        <ul className="nav nav-pills">
+      <div className="mt-2 ">
+        <ul className="nav nav-pills ">
           <li className="nav-item">
             <a
               className="nav-link active"
