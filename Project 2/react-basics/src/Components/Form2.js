@@ -4,9 +4,11 @@ function Form2() {
   const [data, setData] = useState({ name: "", password: "" });
 
   const handleValue = (e) => {
+    console.log(data.name);
     const { name, value } = e.target;
+    console.log(e.target.name, e.target.value);
     setData({ ...data, [name]: value });
-    console.log(name, value);
+    console.log(`${name}:${value}`);
   };
 
   const handleSubmit = (e) => {
@@ -25,7 +27,7 @@ function Form2() {
             value={data.name}
             onChange={handleValue}
           />
-          {console.log(data.name)}
+          {/* {console.log(data.name)} */}
           <br />
           <label htmlFor="pass">Password: </label>
           <input
