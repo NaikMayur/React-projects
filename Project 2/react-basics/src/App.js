@@ -6,6 +6,7 @@ import Test2 from "./Components/Test2";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Test from "./Components/Test";
 import Form from "./Components/Form";
+import Form2 from "./Components/Form2";
 export default function MyApp() {
   const url = "https://api.github.com/users/NaikMayur";
   const [data, setData] = useState(null); // Initialize as null
@@ -72,6 +73,7 @@ export default function MyApp() {
           <Route path="/fetch" element={<Fetch />} />
           <Route path="/test2" element={<Test2 />} />
         </Routes>
+        <Form2 />
       </Router>
     </>
   );

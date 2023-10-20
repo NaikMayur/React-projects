@@ -56,7 +56,9 @@ function Form() {
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-          ></textarea>
+          >
+            {console.log(formData.message)}
+          </textarea>
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
