@@ -29,7 +29,7 @@ export default function MyApp() {
           reject(err);
         });
     });
-
+    //
     fetchApi
       .then((res) => {
         setData(res); // Set the data to the state here
