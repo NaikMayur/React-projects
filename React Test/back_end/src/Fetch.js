@@ -20,7 +20,7 @@ function Fetch() {
     fetch("https://jsonplaceholder.typicode.com/users", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json", // Correct content type for JSON
+        "Content-Type": "application/json", // //Correct content type for JSON
       },
       body: JSON.stringify(data), // Send the JSON string
     })
