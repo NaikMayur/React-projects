@@ -2,34 +2,38 @@ import React, { useEffect, useState } from "react";
 
 function Fetch2() {
   const [data, setData] = useState("");
-  const [err, setErr] = useState(null);
+  const [error, setErr] = useState(null);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://jsonplaceholder.ypicode.com/users")
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Network Error: ");
+          throw new Error("Network Error: could not fetch");
         }
         return res.json();
       })
       .then((res) => {
         setData(res);
-        console.log(data);
       })
       .catch((err) => {
         setErr(err);
-        console.log(err);
       });
   }, []);
-
+  console.log(data);
   return (
     <>
-      {/* {data ? (
+      {error ? (
+        <p>{error}</p>
+      ) : data ? (
         <ul>
-          <li>{data}</li>
+          {data.map((posts) => (
+            <li key={posts.id}>
+              <h3>{posts.name}</h3>
+            </li>
+          ))}
         </ul>
       ) : (
-        <h2>{err}</h2>
-      )} */}
+        <p>Loading...</p>
+      )}
     </>
   );
 }
