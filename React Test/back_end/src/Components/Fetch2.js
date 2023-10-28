@@ -10,18 +10,25 @@ function Fetch2() {
       title: "Sample Title",
       body: "Sample body content",
     };
-    fetch("https://jsonplaceholder.typicode.com/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(obj),
-    })
+    // fetch("https://jsonplaceholder.typicode.com/users", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(obj),
+    // })
+
+    axios
+      .post("https://jsonplaceholder.typicode.com/users", obj, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((res) => {
-        if (!res.ok) {
+        if (res.status !== 201) {
           throw new Error(res.status);
         }
-        return res.json();
+        return res.data;
       })
       .then((res) => {
         setData(res);
@@ -29,7 +36,7 @@ function Fetch2() {
         console.log("data sent :", res);
       })
       .catch((err) => {
-        setErr(`${err.message}`);
+        setErr(err.message);
       });
 
     // axios.post("https://jsonplaceholder.typicode.com/users", obj, {
