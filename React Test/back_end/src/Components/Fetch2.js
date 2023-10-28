@@ -5,7 +5,7 @@ function Fetch2() {
   const [error, setErr] = useState(null);
 
   useEffect(() => {
-    fetch("https://sonplaceholder.typicode.com/users")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
         if (!res.ok) {
           throw new Error(res.status);
@@ -16,7 +16,7 @@ function Fetch2() {
         setData(res);
       })
       .catch((err) => {
-        setErr(err.message);
+        setErr(`${err.message}`);
       });
   }, []);
 
@@ -31,7 +31,9 @@ function Fetch2() {
           <div>
             {data.map((posts) => (
               <li key={posts.id}>
-                <h3>{posts.name}</h3>
+                <i>
+                  <h4>{posts.name}</h4>
+                </i>
               </li>
             ))}
           </div>
